@@ -1,5 +1,6 @@
 ## Architecture Design
-![image](https://github.com/Csye6225SumanthOrg/.github/assets/114118569/f268b546-c68f-4305-b063-38179794aac8)
+<img width="1512" alt="image" src="https://github.com/Csye6225SumanthOrg/.github/assets/114118569/7d6798f4-41d2-459d-ac78-793af7fe9649">
+
 
 
 ## Key Services and Features:
