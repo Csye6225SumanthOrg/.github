@@ -1,5 +1,6 @@
 ## Architecture Design
-<img width="1512" alt="image" src="https://github.com/Csye6225SumanthOrg/.github/assets/114118569/7d6798f4-41d2-459d-ac78-793af7fe9649">
+![image](https://github.com/Csye6225SumanthOrg/.github/assets/114118569/690c59e7-e139-4717-ac2d-5be1250ef0e9)
+
 
 
 
@@ -45,6 +46,16 @@ Security Groups act as firewalls, allowing specified traffic. EC2 instances only
 
 ## IAM Role:
 IAM roles grant EC2 instances in public subnets permissions to access S3 buckets.
+
+
+## Continuous Integration (CI):
+CI involves developers regularly integrating code changes into a shared repository, triggering automated tests (unit, integration) and code quality checks (linting, static analysis). GitHub Actions automates these processes, ensuring code integrity and identifying issues early.
+
+## Continuous Deployment/Delivery (CD):
+CD automates the deployment of code changes to production or staging environments after successful CI. GitHub Actions triggers deployment workflows, sets up deployment environments, executes deployment scripts/tools (e.g., AWS CLI), and validates deployments in staging before promoting to production.
+
+## GitHub Actions Workflow:
+Using YAML syntax, GitHub Actions workflows define trigger events (code pushes, pull requests), jobs (build, test, deploy), steps/actions (commands, tools), and manage environment variables/secrets securely. This automation streamlines software delivery, fostering collaboration, consistency, and faster release cycles.
 
 
 
