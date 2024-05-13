@@ -1,12 +1,49 @@
-## Hi there 👋
+## Architecture Design
+![image](https://github.com/Csye6225SumanthOrg/.github/assets/114118569/f268b546-c68f-4305-b063-38179794aac8)
 
-<!--
 
-**Here are some ideas to get you started:**
+## Key Services and Features:
 
-🙋‍♀️ A short introduction - what is your organization all about?
-🌈 Contribution guidelines - how can the community get involved?
-👩‍💻 Useful resources - where can the community find your docs? Is there anything else the community should know?
-🍿 Fun facts - what does your team eat for breakfast?
-🧙 Remember, you can do mighty things with the power of [Markdown](https://docs.github.com/github/writing-on-github/getting-started-with-writing-and-formatting-on-github/basic-writing-and-formatting-syntax)
--->
+## Route 53:
+Route 53 is a fully managed and scalable DNS service, providing 100% availability SLA and serving as a Domain Registrar. It translates human-readable hostnames to machine IP addresses.
+
+## Virtual Private Cloud (VPC):
+VPC forms the core of AWS infrastructure, offering resource isolation and a private network for applications. It can be segmented into public and private subnets.
+
+## Internet Gateway (IGW):
+IGW enables resources within a VPC, such as EC2 instances, to connect to the Internet. It scales horizontally and is tied to one VPC, requiring route table updates for Internet access.
+
+## Application Load Balancer (ALB):
+Launched in 2016, ALB operates at layer 7, supporting HTTP/s and Websocket protocols. It distributes traffic across resources in target groups and natively supports cross-zone load balancing.
+
+## Elastic Compute Cloud (EC2):
+EC2 provides virtual machines to host application logic and serve client requests.
+
+## Auto Scaling Group (ASG):
+ASG deploys EC2 instances with application code to ensure availability and scalability. It replaces unhealthy instances flagged by the Application Load Balancer's health checks.
+
+## CloudWatch:
+CloudWatch uses alarms to scale EC2 instances in ASG based on metrics like Average CPU Utilization. EC2 instances send logs to CloudWatch every 60 seconds via the CloudWatch Unified Agent.
+
+## Simple Storage Service (S3):
+S3 offers highly available and durable object storage. It uses buckets with globally unique names to store objects like product images.
+
+## Relational Database Service (RDS):
+RDS is a managed relational database service supporting various database engines. It enables Multi-AZ setups for disaster recovery and uses ACM for TLS certificates.
+
+## Security Considerations:
+
+## AWS Certificate Manager (ACM):
+ACM manages TLS certificates for secure communication. It's integrated with services like ALB for HTTPS and supports both public and private certificates.
+
+## Key Management Service (KMS):
+KMS handles encryption keys, integrated with IAM for authorization and auditable via CloudTrail. It encrypts RDS databases and EC2 EBS volumes.
+
+## Security Groups:
+Security Groups act as firewalls, allowing specified traffic. EC2 instances only accept traffic from ALB, and RDS permits traffic solely from EC2 instances.
+
+## IAM Role:
+IAM roles grant EC2 instances in public subnets permissions to access S3 buckets.
+
+
+
